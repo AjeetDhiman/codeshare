@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav__link.nav__link--single::after {
+  @apply absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-blue-600 opacity-0 transition-all duration-300 ease-in-out;
+  content: "";
+}
+
+.nav__link.nav__link--single:hover::after,
+.nav__link.nav__link--single.active::after {
+  @apply scale-x-100 transform opacity-100;
+}
+
+.toggle__button {
+  @apply block lg:hidden;
+}
