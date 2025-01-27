@@ -1,5 +1,20 @@
 import client from "../utils/sanityClient";
 
+export const getLoginData = async () => {
+  const query = `*[_type == 'user']{
+  role,
+  username,
+  password
+}`;
+  try {
+    const data = await client.fetch(query);
+    return data;
+  } catch (error) {
+    console.error("Error fetching Sanity data:", error);
+    throw error;
+  }
+};
+
 export const getSanityMenuData = async () => {
   try {
     const data = await client.fetch(
