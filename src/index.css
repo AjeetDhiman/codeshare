@@ -9,9 +9,5 @@
 
 .nav__link.nav__link--single:hover::after,
 .nav__link.nav__link--single.active::after {
-  @apply scale-x-100 transform opacity-100;
-}
-
-.toggle__button {
-  @apply block lg:hidden;
+  @apply hidden scale-x-100 transform opacity-100 lg:block;
 }
