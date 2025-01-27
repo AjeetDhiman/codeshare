@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Form } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
+// import { Button } from "@/components/ui/Button";
 import { Label } from "@/components/ui/Label";
 import { ErrorLabel } from "@/components/ui/ErrorLabel";
 import { NavLink } from "react-router-dom";
@@ -55,13 +55,13 @@ export const Login = () => {
                   Forgot Password?
                 </NavLink>
               </div>
-              <Button
+              {/* <Button
                 type="submit"
                 className="mb-2 mt-4 w-full"
                 action={() => {}}
               >
                 Sign in
-              </Button>
+              </Button> */}
             </Form>
             <p className="text-center">
               Don't have an account? &nbsp;
