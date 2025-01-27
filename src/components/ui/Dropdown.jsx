@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import propTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import { Button } from "./button";
+import { Button } from "./Button";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { ListWrapper } from "./ListWrapper";
 import { List } from "./List";

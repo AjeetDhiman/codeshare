@@ -1,5 +1,3 @@
-import { Button } from "../components/ui/button";
-
 export const Homepage = () => {
   return (
     <div className="text-center">
@@ -9,9 +7,6 @@ export const Homepage = () => {
       <p className="mt-4 text-gray-700">
         This is the homepage content styled with Tailwind.
       </p>
-      <Button type="button" action={() => {}}>
-        Click me
-      </Button>
     </div>
   );
 };
