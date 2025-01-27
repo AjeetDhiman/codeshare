@@ -1,17 +1,11 @@
 import React from "react";
 import propTypes from "prop-types";
-
-export const Input = ({
-  type = "text",
-  placeholder = "Enter",
-  action = "",
-  className = "",
-  ...props
-}) => {
-  const baseStyle = `w-full p-2 rounded border border-gray-500  focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-dashed focus-visible:outline-1 focus-visible:outline-gray-500 focus-within:outline focus-within:outline-offset-1 focus-within:outline-dashed focus-within:outline-1 focus-within:outline-gray-500`;
+import clsx from "clsx";
+export const Input = ({ type = "text", className = "", ...props }) => {
+  const baseStyle = `p-2 rounded border border-gray-400  focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-dashed focus-visible:outline-1 focus-visible:outline-gray-500 focus-within:outline focus-within:outline-offset-1 focus-within:outline-dashed focus-within:outline-1 focus-within:outline-gray-500 mb-3`;
 
   const specificTpye = {
-    checkbox: "h-4 w-4",
+    checkbox: "h-4 w-4 mb-0 ",
     color: "w-16 h-8",
     date: "p-2",
     "datetime-local": "p-2",
@@ -30,8 +24,35 @@ export const Input = ({
     url: "w-full",
     week: "p-2",
   };
-  const finalStyle = `${baseStyle} ${className} ${specificTpye[type] || ""}`;
-  return <input type={type} className={finalStyle} {...props} />;
+  const autocompleteAttributes = {
+    email: "email",
+    password: "current-password",
+    text: "on",
+    search: "search",
+    tel: "tel",
+    url: "url",
+    number: "off",
+    date: "bday",
+    "datetime-local": "bday",
+    month: "bday",
+    time: "off",
+    week: "off",
+    color: "off",
+    hidden: "off",
+    checkbox: "off",
+    radio: "off",
+    file: "off",
+    range: "off",
+  };
+  const mergedClasses = clsx(baseStyle, specificTpye[type], className);
+  return (
+    <input
+      type={type}
+      autoComplete={autocompleteAttributes[type] || "off"}
+      className={mergedClasses}
+      {...props}
+    />
+  );
 };
 
 Input.propTypes = {
@@ -56,5 +77,4 @@ Input.propTypes = {
     "week",
   ]).isRequired,
   className: propTypes.string,
-  action: propTypes.func,
 };

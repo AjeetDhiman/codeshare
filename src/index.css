@@ -11,3 +11,7 @@
 .nav__link.nav__link--single.active::after {
   @apply hidden scale-x-100 transform opacity-100 lg:block;
 }
+
+p {
+  @apply text-gray-900;
+}
