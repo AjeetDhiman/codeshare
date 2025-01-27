@@ -4,7 +4,7 @@ import { Brand } from "./Brand";
 import { getSanityMenuData, getDropDownMenuData } from "../api";
 import { NavItem } from "./NavItem";
 import { ListWrapper } from "./ui/ListWrapper";
-import { Button } from "./ui/Button";
+import { Button } from "@/components/ui/Button";
 import { Overlay } from "./ui/Overlay";
 import { Dropdown } from "./ui/Dropdown";
 import { Image } from "./ui/Image";
@@ -87,7 +87,6 @@ export const Header = () => {
           </div>
         </div>
         <div className="flex h-full items-center gap-2">
-          
           <Dropdown
             action={dropdownData.action}
             marker={dropdownData.marker}
